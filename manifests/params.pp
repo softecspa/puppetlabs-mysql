@@ -5,6 +5,8 @@ class mysql::params {
   $old_root_password      = ''
   $purge_conf_dir         = false
   $restart                = false
+  $runtime                = false
+  $runtime_variables      = 'UNSET'
   $root_password          = 'UNSET'
   $server_package_ensure  = 'present'
   $server_service_manage  = true

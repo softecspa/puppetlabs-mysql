@@ -10,6 +10,8 @@ class mysql::server (
   $purge_conf_dir          = $mysql::params::purge_conf_dir,
   $remove_default_accounts = false,
   $restart                 = $mysql::params::restart,
+  $runtime                 = $mysql::params::runtime,
+  $runtime_variables       = $mysql::params::runtime_variables,
   $root_group              = $mysql::params::root_group,
   $root_password           = $mysql::params::root_password,
   $service_enabled         = $mysql::params::server_service_enabled,
@@ -48,6 +50,7 @@ class mysql::server (
   include '::mysql::server::config'
   include '::mysql::server::service'
   include '::mysql::server::root_password'
+  include '::mysql::server::runtime'
   include '::mysql::server::providers'
 
   if $remove_default_accounts {
@@ -76,6 +79,7 @@ class mysql::server (
     Class['mysql::server::service'] ->
     Class['mysql::server::root_password'] ->
     Class['mysql::server::providers'] ->
+    Class['mysql::server::runtime'] ->
     Anchor['mysql::server::end']
   }
 
