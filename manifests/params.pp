@@ -11,6 +11,7 @@ class mysql::params {
   $server_package_ensure  = 'present'
   $server_service_manage  = true
   $server_service_enabled = true
+  $server_hostname        = 'localhost'
   $client_package_ensure  = 'present'
   # mysql::bindings
   $bindings_enable             = false

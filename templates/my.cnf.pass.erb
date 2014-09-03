@@ -1,6 +1,6 @@
 [client]
 user=root
-host=localhost
+host=<%= scope.lookupvar('mysql::server::server_hostname') %>
 <% unless scope.lookupvar('mysql::server::root_password') == 'UNSET' -%>
 password='<%= scope.lookupvar('mysql::server::root_password') %>'
 <% end -%>

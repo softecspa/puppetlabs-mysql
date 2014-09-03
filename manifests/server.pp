@@ -4,6 +4,7 @@ class mysql::server (
   $includedir              = $mysql::params::includedir,
   $manage_config_file      = $mysql::params::manage_config_file,
   $old_root_password       = $mysql::params::old_root_password,
+  $server_hostname         = $mysql::params::server_hostname,
   $override_options        = {},
   $package_ensure          = $mysql::params::server_package_ensure,
   $package_name            = $mysql::params::server_package_name,

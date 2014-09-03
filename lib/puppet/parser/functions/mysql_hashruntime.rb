@@ -18,12 +18,14 @@ EOS
     result = Hash.new 
 
     input_hash.each do |section, hash|
-      hash.each do |key, val|
-        variable_name = key.sub('-','_')
-        if allowed.include?(variable_name)
+      if section == 'mysqld'
+        hash.each do |key, val|
+          variable_name = key.sub('-','_')
+          if allowed.include?(variable_name)
             keyval = Hash.new
             keyval['value']=val
             result[variable_name] = keyval
+          end
         end
       end
     end
