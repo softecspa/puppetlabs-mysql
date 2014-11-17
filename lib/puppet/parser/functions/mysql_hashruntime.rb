@@ -1,5 +1,5 @@
 module Puppet::Parser::Functions
-  newfunction(:mysql_hashruntime, :type => :rvalue, :arity => 1, :doc => <<-EOS
+  newfunction(:mysql_hashruntime, :type => :rvalue, :doc => <<-EOS
 TEMPORARY FUNCTION: EXPIRES 2014-03-10
 When given a hash this function strips out all blank entries.
 EOS
